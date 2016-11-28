@@ -22,15 +22,7 @@ getListReceitaR = do
     sendResponse (object [pack "dados" .= toJSON receitas])
 --copiado do hask3 do garcia
 
-postMontagemR :: Handler TypedContent
-postMontagemR = do
-    mlista <- requireJsonBody :: Handler Montagem
-    listaIng <- return $ ingrids mlista
-    listaUtens <- return $ utensids mlista
-    receid <- return $ idReceita mlista
-    sequence $ Prelude.map (runDB . insert . (ReceitasIngredientes receid)) listaIng
-    sequence $ Prelude.map (runDB . insert . (ReceitasUtensilios receid)) listaUtens
-    sendResponse (object [pack "resp" .= pack "CREATED: Receita Montada "])
+
 -- linha 25 lê o json e passa para o tipo montagem
 -- o tipo montagem tem o id da receita e duas listas com os ids de Ingredientes e Utensilios
 -- nas linhas 26, 27 e 28 extrai os campos do tipo montagem
