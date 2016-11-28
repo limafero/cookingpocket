@@ -16,7 +16,10 @@ postReceitasR = do
 -- "receitas" vai receber uma requisição do JSON, há uma conversão para o tipo Receita
 -- e inserir uma nova receita. E então responde com uma mensagem de criação.
 
-
+getListReceitaR :: Handler TypedContent
+getListReceitaR = do
+    receitas <- runDB $ selectList [] [Asc ReceitasNome]
+    sendResponse (object [pack "dados" .= toJSON receitas])
 --copiado do hask3 do garcia
 
 postMontagemR :: Handler TypedContent
