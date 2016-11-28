@@ -1,0 +1,4 @@
+password:
+xpIgavAshJIxOjEk8ZLxGeezTN
+
+psql -h ec2-107-22-238-96.compute-1.amazonaws.com -p 5432 -U mikvlcysczygwl -W doienjtgi666n

@@ -1,0 +1,31 @@
+/usuarios/cadastro       UsuariosR      POST
+-- A rota UsuariosR lê o json, o haskell converte pro tipo correspondente 
+-- e a ferramenta de persistência manda pra tabela certa pela função insert
+
+/utensilios/cadastro     UtensR         POST 
+-- A rota UtensR lê o json, o haskell converte pro tipo correspondente 
+-- e a ferramenta de persistência manda pra tabela certa pela função insert
+
+/ingredientes/cadastro   IngredR        POST
+-- A rota IngredR lê o json, o haskell converte pro tipo correspondente 
+-- e a ferramenta de persistência manda pra tabela certa pela função insert
+
+/ingredientes/listar     ListIngredR    GET
+-- A rota ListIngredR lê o json, o haskell converte pro tipo correspondente 
+-- e a ferramenta de persistência manda pra tabela certa pela função insert
+
+/utensilios/listar       ListUtensR     GET
+-- A rota ListUtensR lê o json, o haskell converte pro tipo correspondente 
+-- e a ferramenta de persistência manda pra tabela certa pela função insert
+
+/receitas/listar         ListReceitaR   GET
+-- A rota ListReceitaR lê o json, o haskell converte pro tipo correspondente 
+-- e a ferramenta de persistência manda pra tabela certa pela função insert
+
+/receitas/cadastro       ReceitasR      POST
+-- A rota ReceitasR lê o json, o haskell converte pro tipo correspondente 
+-- e a ferramenta de persistência manda pra tabela certa pela função insert
+
+/montagem                MontagemR      POST
+-- A rota MontagemR lê o json, o haskell converte pro tipo correspondente 
+-- e a ferramenta de persistência manda pra tabela certa pela função insert

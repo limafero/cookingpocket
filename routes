@@ -1,4 +1,10 @@
-/person          PersonR     POST
-/people          PeopleR     GET
-/secretary       SecretaryR  GET
-/department      DeptoR      POST
+/usuarios/cadastro       UsuariosR      POST
+/utensilios/cadastro     UtensR         POST 
+/login                   LoginR         POST
+/logout                  LogoutR        POST
+/ingredientes/cadastro   IngredR        POST
+/ingredientes/listar     ListIngredR    GET
+/utensilios/listar       ListUtensR     GET
+/receitas/listar         ListReceitaR   GET
+/receitas/cadastro       ReceitasR      POST
+/montagem                MontagemR      POST

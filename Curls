@@ -1,0 +1,17 @@
+cadastro de usuarios:
+curl -v -X POST "https://haskellweb-limafero.c9users.io/usuarios/cadastro" -d '{"nome":"Liliam","email":"liliam_mfr@hotmail.com","senha":"lili"}'
+
+login:
+curl -v -X POST "https://haskellweb-limafero.c9users.io/login" -d '{"nome":"","email":"liliam_mfr@hotmail.com","senha":"lili"}'
+
+cadastro de utensilios:
+curl -v -X POST "https://haskellweb-limafero.c9users.io/utensilios/cadastro" -d '{"nome":"Fuet","descricao":"treco de bater bolo"}'
+
+cadastro de ingredientes:
+curl -v -X POST "https://haskellweb-limafero.c9users.io/ingredientes/cadastro" -d '{"nome":"farinha","descricao":"farinha de trigo"}'
+
+cadastro de receitas:
+curl -v -X POST "https://haskellweb-limafero.c9users.io/receitas/cadastro" -d '{"nome":"bolo","descricao":"red velvet","categoria":"Doces"}'
+
+montagem da receita:
+curl -v -X POST "https://haskellweb-limafero.c9users.io/montagem" -d '{"idReceita":1 ,"ingrids":[1,2,3],"utensids":[1]}'
