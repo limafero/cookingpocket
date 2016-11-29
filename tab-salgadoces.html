@@ -1,0 +1,22 @@
+<ion-view title="Salgadoces">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="recipe in salgados" href="#/tab/salgadoces/{{recipe.id}}">
+        <div class="list card">
+  <div class="item">
+    <h2>{{recipe.title}}</h2>
+    <p>{{recipe.id}}</p>
+  </div>
+
+  <div class="item item-body">
+    <img class="full-image" src="{{recipe.img}}">
+    <p>
+      {{recipe.body}}
+    </p>
+  </div>
+
+</div>
+      </ion-item>
+    </ion-list>
+          </ion-content>
+        </ion-view>
