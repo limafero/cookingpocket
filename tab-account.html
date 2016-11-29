@@ -1,0 +1,7 @@
+<ion-view view-title="Meus Utensílios">
+  <ion-content>
+    <ion-list>
+          <ion-checkbox ng-repeat="utensilio in utensilios" ng-model="utensilio.possui">{{utensilio.name}}</ion-checkbox>
+    </ion-list>
+  </ion-content>
+</ion-view>
