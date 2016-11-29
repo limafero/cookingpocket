@@ -10,6 +10,7 @@ import Data.Text
 
 postIngredR :: Handler TypedContent
 postIngredR = do
+    addHeader "Access-Control-Allow-Origin" "*"
     ingredientes <- requireJsonBody :: Handler Ingredientes
     iid <- runDB $ insert ingredientes
     sendResponse (object [pack "resp" .= pack ("CREATED " ++ (show $ fromSqlKey iid))])
@@ -18,6 +19,7 @@ postIngredR = do
 
 getListIngredR :: Handler TypedContent
 getListIngredR = do
+    addHeader "Access-Control-Allow-Origin" "*"
     ingredientes <- runDB $ selectList [] [Asc IngredientesNome]
     sendResponse (object [pack "dados" .= toJSON ingredientes])
 -- Recebe uma requisição do Json, há uma conversão para o tipo Ingrediente 

@@ -9,6 +9,7 @@ import Data.Text
 
 postUtensR :: Handler TypedContent
 postUtensR = do
+    addHeader "Access-Control-Allow-Origin" "*"
     utensilios <- requireJsonBody :: Handler Utensilios
     uid <- runDB $ insert utensilios
     sendResponse (object [pack "resp" .= pack ("CREATED " ++ (show $ fromSqlKey uid))])
@@ -18,6 +19,7 @@ postUtensR = do
 
 getListUtensR :: Handler TypedContent
 getListUtensR = do
+    addHeader "Access-Control-Allow-Origin" "*"
     utensilios <- runDB $ selectList [] [Asc UtensiliosNome]
     sendResponse (object [pack "dados" .= toJSON utensilios])
 -- Recebe uma requisição do Json, há uma conversão para o tipo Utensílio 

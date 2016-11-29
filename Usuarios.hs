@@ -10,6 +10,7 @@ import Data.Text
 
 postUsuariosR :: Handler TypedContent
 postUsuariosR = do 
+    addHeader "Access-Control-Allow-Origin" "*"
     usuarios <- requireJsonBody :: Handler Usuarios
     uid <- runDB $ insert usuarios
     sendResponse (object [pack "resp" .= pack ("CREATED " ++ (show $ fromSqlKey uid))])

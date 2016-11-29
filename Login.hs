@@ -13,6 +13,7 @@ import Database.Persist.Postgresql
 
 postLoginR :: Handler Html
 postLoginR = do
+            addHeader "Access-Control-Allow-Origin" "*"
             result <- requireJsonBody :: Handler Usuarios
             cara <- runDB $ selectFirst [UsuariosEmail ==. usuariosEmail result,
                                         UsuariosSenha ==. usuariosSenha result] []
