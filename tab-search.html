@@ -1,0 +1,31 @@
+<ion-view view-title="Busca">
+    <ion-content>
+    <div class="bar  bar-header item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios7-search placeholder-icon"></i>
+    <input type="search" ng-model="inputText">
+  </label>
+  <button class="button">
+    Ok
+  </button>
+</div>
+    <ion-list>
+      <ion-item ng-repeat="recipe in recipes | myFilter:inputText:recipe.ingredientes" href="#/tab/search/{{recipe.id}}" ng-hide="utensiliosMatch(meusUtensilios,recipe.utensilios)">
+        <div class="list card">
+  <div class="item">
+    <h2>{{recipe.name}}</h2>
+    <p>{{recipe.categoria}}</p>
+  </div>
+
+  <div class="item item-body">
+    <img class="full-image" src="{{recipe.img}}">
+    <p>
+      {{recipe.description}}
+    </p>
+  </div>
+
+</div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
